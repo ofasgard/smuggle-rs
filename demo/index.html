@@ -1,0 +1,21 @@
+<html>
+
+<head>
+<title>WASM Smuggling Demo</title>
+</head>
+
+<body>
+
+<div id="demo-button">
+<input type="button" id="dlinit" value="Click to download your PDF!" />
+</div>
+
+<script type="module">
+import init, { init_panic_hook } from '../pkg/smuggle_rs.js';
+
+await init();
+init_panic_hook();
+</script>
+
+</body>
+</html>
