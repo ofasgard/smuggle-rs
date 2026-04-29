@@ -3,7 +3,7 @@
 A simple proof-of-concept implementation of WASM-based HTML smuggling. Unlike other implementations, this one uses `web-sys` to manipulate the DOM and register event handlers with pure Rust, so all you have to do is import the web assembly like so:
 
 ```javascript
-import init, { init_panic_hook } from '../pkg/smuggle_rs.js';
+import init from '../pkg/smuggle_rs.js';
 await init();
 ```
 
