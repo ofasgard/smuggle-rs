@@ -19,10 +19,9 @@ You will need the basic Rust toolchain to build this project, along with `wasm-p
 
 - **SMUGGLER_ID**: The ID of the HTML input element we are using as a trigger.
 - **SMUGGLER_EVENT**: Which event we should be handling on the trigger element.
-- **SMUGGLER_PAYLOAD**: The base64-encoded data that should be served to the user.
 - **SMUGGLER_FILENAME**: The filename that should be specified.
 
-Note that if your payload is too big, you might get "argument list too long" errors. In that case, you might need to modify `lib.rs` to load a base64-encoded payload directly using `include_str!()` instead.
+The payload itself is read directly from `demo/payload.b64`, which is the base64-encoded file to download.
 
 The provided `build.sh` script is prefilled with valid examples for the demo (which uses a button with an ID of `dlinit`):
 

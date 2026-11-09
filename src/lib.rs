@@ -2,10 +2,11 @@ use wasm_bindgen::prelude::*;
 use web_sys::{ Document, HtmlAnchorElement, HtmlInputElement };
 use console_error_panic_hook;
 
-const TRIGGER_ID    : &str = env!("SMUGGLER_ID");         // The ID of the HTML input element we are using as a trigger.
-const TRIGGER_EVENT : &str = env!("SMUGGLER_EVENT");      // Which event we should be handling on the trigger element.
-const PAYLOAD       : &str = env!("SMUGGLER_PAYLOAD");    // The base64-encoded data that should be served to the user.
-const FILENAME      : &str = env!("SMUGGLER_FILENAME");   // The filename that should be specified.
+const TRIGGER_ID    : &str = env!("SMUGGLER_ID");                 // The ID of the HTML input element we are using as a trigger.
+const TRIGGER_EVENT : &str = env!("SMUGGLER_EVENT");              // Which event we should be handling on the trigger element.
+const FILENAME      : &str = env!("SMUGGLER_FILENAME");           // The filename that should be specified.
+
+const PAYLOAD       : &str = include_str!("../demo/payload.b64"); // The base64-encoded data that should be served to the user.
 
 pub fn initiate_download(document: &Document, filename: &str, payload: &str) {
 	// Create an invisible anchor element.
