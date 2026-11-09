@@ -22,6 +22,8 @@ You will need the basic Rust toolchain to build this project, along with `wasm-p
 - **SMUGGLER_PAYLOAD**: The base64-encoded data that should be served to the user.
 - **SMUGGLER_FILENAME**: The filename that should be specified.
 
+Note that if your payload is too big, you might get "argument list too long" errors. In that case, you might need to modify `lib.rs` to load a base64-encoded payload directly using `include_str!()` instead.
+
 The provided `build.sh` script is prefilled with valid examples for the demo (which uses a button with an ID of `dlinit`):
 
 ```sh
